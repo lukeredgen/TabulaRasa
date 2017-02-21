@@ -1,0 +1,25 @@
+{
+    "tabulaRasaApp": {
+        "featureFunction" : {
+            "home": {
+                "title": "Feature Functions",
+                "createLabel": "Create a new Feature Function",
+                "createOrEditLabel": "Create or edit a Feature Function",
+                "search": "Search for Feature Function"
+            },
+            "created": "A new Feature Function is created with identifier {{ param }}",
+            "updated": "A Feature Function is updated with identifier {{ param }}",
+            "deleted": "A Feature Function is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Feature Function {{ id }}?"
+            },
+            "detail": {
+                "title": "Feature Function"
+            },
+            "name": "Name",
+            "description": "Description",
+            "releasefeature": "Releasefeature",
+            "subfunction": "Subfunction"
+        }
+    }
+}

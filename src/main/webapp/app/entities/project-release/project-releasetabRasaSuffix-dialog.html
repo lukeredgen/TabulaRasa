@@ -1,0 +1,70 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProjectReleaseLabel" data-translate="tabulaRasaApp.projectRelease.home.createOrEditLabel">Create or edit a Project Release</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.projectRelease.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.projectRelease.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tabulaRasaApp.projectRelease.codename" for="field_codename">Codename</label>
+            <input type="text" class="form-control" name="codename" id="field_codename"
+                    ng-model="vm.projectRelease.codename"
+                    required/>
+            <div ng-show="editForm.codename.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.codename.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tabulaRasaApp.projectRelease.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.projectRelease.description"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="tabulaRasaApp.projectRelease.version" for="field_version">Version</label>
+            <input type="number" class="form-control" name="version" id="field_version"
+                    ng-model="vm.projectRelease.version"
+                    required/>
+            <div ng-show="editForm.version.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.version.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.version.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="tabulaRasaApp.projectRelease.project" for="field_project">Project</label>
+            <select class="form-control" id="field_project" name="project" ng-model="vm.projectRelease.projectId" ng-options="project.id as project.id for project in vm.projects"            >
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="tabulaRasaApp.projectRelease.releasefeature" for="field_releasefeature">Releasefeature</label>
+            <select class="form-control" id="field_releasefeature" multiple name="releasefeature" ng-model="vm.projectRelease.releasefeatures" ng-options="releaseFeature as releaseFeature.id for releaseFeature in vm.releasefeatures track by releaseFeature.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,26 @@
+{
+    "tabulaRasaApp": {
+        "releaseFeature" : {
+            "home": {
+                "title": "Release Features",
+                "createLabel": "Create a new Release Feature",
+                "createOrEditLabel": "Create or edit a Release Feature",
+                "search": "Search for Release Feature"
+            },
+            "created": "A new Release Feature is created with identifier {{ param }}",
+            "updated": "A Release Feature is updated with identifier {{ param }}",
+            "deleted": "A Release Feature is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Release Feature {{ id }}?"
+            },
+            "detail": {
+                "title": "Release Feature"
+            },
+            "name": "Name",
+            "description": "Description",
+            "featurefunction": "Featurefunction",
+            "featurefunction": "Featurefunction",
+            "projectrelease": "Projectrelease"
+        }
+    }
+}

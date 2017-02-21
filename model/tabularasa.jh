@@ -1,0 +1,45 @@
+entity Organisation {
+	name String required
+}
+
+entity Project {
+	name String required
+}
+
+entity ProjectRelease {
+	codename String required,
+    description String,
+    version Long required
+}
+
+entity ReleaseFeature {
+	name String required,
+    description String
+}
+
+entity FeatureFunction {
+	name String required,
+    description String
+}
+
+relationship OneToMany {
+	Organisation{project} to Project,
+    Project{projectrelease} to ProjectRelease
+}
+
+relationship ManyToOne {
+    Organisation{member} to User
+}
+
+relationship ManyToMany {
+	ProjectRelease{releasefeature} to ReleaseFeature{projectrelease},
+    ReleaseFeature{featurefunction} to FeatureFunction{releasefeature},
+    ReleaseFeature{featurefunction} to FeatureFunction{subfunction}
+}
+
+// Set pagination options
+paginate ReleaseFeature, FeatureFunction, Organisation with pagination
+
+dto * with mapstruct
+service all with serviceImpl
+angularSuffix * with tabRasaSuffix

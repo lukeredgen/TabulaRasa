@@ -1,0 +1,47 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "releasefeature",
+            "relationshipName": "featurefunction",
+            "otherEntityName": "featureFunction",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "otherEntityRelationshipName": "subfunction",
+            "relationshipName": "featurefunction",
+            "otherEntityName": "featureFunction",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "projectrelease",
+            "otherEntityName": "projectRelease",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "releasefeature"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170221071455",
+    "entityTableName": "release_feature",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "angularJSSuffix": "tabRasaSuffix"
+}

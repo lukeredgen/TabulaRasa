@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity ReleaseFeature.
+    -->
+    <changeSet id="20170221071455-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="release_features_id"
+                                 baseTableName="release_feature_featurefunction"
+                                 constraintName="fk_release_feature_featurefunction_release_features_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="release_feature"/>
+        <addForeignKeyConstraint baseColumnNames="featurefunctions_id"
+                                 baseTableName="release_feature_featurefunction"
+                                 constraintName="fk_release_feature_featurefunction_featurefunctions_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="feature_function"/>
+        
+        <addForeignKeyConstraint baseColumnNames="release_features_id"
+                                 baseTableName="release_feature_featurefunction"
+                                 constraintName="fk_release_feature_featurefunction_release_features_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="release_feature"/>
+        <addForeignKeyConstraint baseColumnNames="featurefunctions_id"
+                                 baseTableName="release_feature_featurefunction"
+                                 constraintName="fk_release_feature_featurefunction_featurefunctions_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="feature_function"/>
+        
+    </changeSet>
+</databaseChangeLog>

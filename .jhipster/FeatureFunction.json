@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "releasefeature",
+            "otherEntityName": "releaseFeature",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "featurefunction"
+        },
+        {
+            "relationshipType": "many-to-many",
+            "relationshipName": "subfunction",
+            "otherEntityName": "releaseFeature",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "featurefunction"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170221071455",
+    "entityTableName": "feature_function",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "angularJSSuffix": "tabRasaSuffix"
+}

@@ -1,0 +1,70 @@
+<div>
+    <h2 data-translate="tabulaRasaApp.projectRelease.home.title">Project Releases</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="project-releasetabRasaSuffix.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="tabulaRasaApp.projectRelease.home.createLabel">
+                        Create new Project Release
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="tabulaRasaApp.projectRelease.codename">Codename</span></th>
+                    <th><span data-translate="tabulaRasaApp.projectRelease.description">Description</span></th>
+                    <th><span data-translate="tabulaRasaApp.projectRelease.version">Version</span></th>
+                    <th><span data-translate="tabulaRasaApp.projectRelease.project">Project</span></th>
+                    <th><span data-translate="tabulaRasaApp.projectRelease.releasefeature">Releasefeature</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="projectRelease in vm.projectReleases track by projectRelease.id">
+                    <td><a ui-sref="project-releasetabRasaSuffix-detail({id:projectRelease.id})">{{projectRelease.id}}</a></td>
+                    <td>{{projectRelease.codename}}</td>
+                    <td>{{projectRelease.description}}</td>
+                    <td>{{projectRelease.version}}</td>
+                    <td>
+                        <a ui-sref="projecttabRasaSuffix-detail({id:projectRelease.projectId})">{{projectRelease.projectId}}</a>
+                    </td>
+                    <td>
+                        <span ng-repeat="releasefeature in projectRelease.releasefeatures">
+                            <a class="form-control-static" ui-sref="release-featuretabRasaSuffix-detail({id: releasefeature.id})">{{releasefeature.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="project-releasetabRasaSuffix-detail({id:projectRelease.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="project-releasetabRasaSuffix.edit({id:projectRelease.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="project-releasetabRasaSuffix.delete({id:projectRelease.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

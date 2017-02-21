@@ -1,0 +1,41 @@
+
+<div>
+    <h2><span data-translate="tabulaRasaApp.projectRelease.detail.title">Project Release</span> {{vm.projectRelease.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="tabulaRasaApp.projectRelease.codename">Codename</span></dt>
+        <dd>
+            <span>{{vm.projectRelease.codename}}</span>
+        </dd>
+        <dt><span data-translate="tabulaRasaApp.projectRelease.description">Description</span></dt>
+        <dd>
+            <span>{{vm.projectRelease.description}}</span>
+        </dd>
+        <dt><span data-translate="tabulaRasaApp.projectRelease.version">Version</span></dt>
+        <dd>
+            <span>{{vm.projectRelease.version}}</span>
+        </dd>
+        <dt><span data-translate="tabulaRasaApp.projectRelease.project">Project</span></dt>
+        <dd>
+            <a ui-sref="projecttabRasaSuffix-detail({id:vm.projectRelease.projectId})">{{vm.projectRelease.projectId}}</a>
+        </dd>
+        <dt><span data-translate="tabulaRasaApp.projectRelease.releasefeature">Releasefeature</span></dt>
+        <dd>
+            <span ng-repeat="releasefeature in vm.projectRelease.releasefeatures">
+                <a ui-sref="release-featuretabRasaSuffix-detail({id: releasefeature.id})">{{releasefeature.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="project-releasetabRasaSuffix-detail.edit({id:vm.projectRelease.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

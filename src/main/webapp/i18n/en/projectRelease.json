@@ -1,0 +1,26 @@
+{
+    "tabulaRasaApp": {
+        "projectRelease" : {
+            "home": {
+                "title": "Project Releases",
+                "createLabel": "Create a new Project Release",
+                "createOrEditLabel": "Create or edit a Project Release",
+                "search": "Search for Project Release"
+            },
+            "created": "A new Project Release is created with identifier {{ param }}",
+            "updated": "A Project Release is updated with identifier {{ param }}",
+            "deleted": "A Project Release is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Project Release {{ id }}?"
+            },
+            "detail": {
+                "title": "Project Release"
+            },
+            "codename": "Codename",
+            "description": "Description",
+            "version": "Version",
+            "project": "Project",
+            "releasefeature": "Releasefeature"
+        }
+    }
+}
